@@ -15,9 +15,10 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = var.resource_ami_amazonLinux2
-  instance_type = "t2.micro"
-  key_name	= "etokral@ubuntu2004gui"
+  ami             = var.resource_ami_amazonLinux2
+  instance_type   = "t2.micro"
+  key_name        = "etokral@ubuntu2004gui"
+  security_groups = ["my-default", ]
 
   tags = {
     Name = var.instance_name
